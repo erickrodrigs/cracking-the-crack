@@ -26,4 +26,23 @@ public class SumListsTest {
 
     assertEquals(expected, actual);
   }
+
+  @Test
+  public void testSumInForwardOrder() {
+    SinglyLinkedList<Integer> list1 = new SinglyLinkedList<>();
+    SinglyLinkedList<Integer> list2 = new SinglyLinkedList<>();
+
+    list1.addEnd(9);
+    list1.addEnd(9);
+    list1.addEnd(9);
+
+    list2.addEnd(2);
+
+    String actual = new SinglyLinkedList<>(
+      SumLists.forwardOrder(list1.getHead(), list2.getHead())
+    ).toString();
+    String expected = "1 -> 0 -> 0 -> 1";
+
+    assertEquals(expected, actual);
+  }
 }
